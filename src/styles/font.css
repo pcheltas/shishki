@@ -1,0 +1,41 @@
+.title-common{
+    color: antiquewhite;
+    font-size: xx-large;
+}
+
+.text-common{
+    color: antiquewhite;
+    font-size: x-large;
+    line-height: 1.5;
+}
+
+.text-small{
+    color: antiquewhite;
+    font-size: large;
+    line-height: 1.5;
+    align-content: space-evenly;
+}
+
+.text-common.active {
+    border: 2px solid rgba(20, 35, 27, 0.88); /* Цвет рамки */
+    background-color: rgba(20, 35, 27, 0.88); /* Цвет фона */
+    border-radius: 20px; /* Закругление углов */
+}
+
+.description-common {
+    margin: 10px;
+    padding: 10px;
+    color: #ffffff; /* Цвет текста */
+    font-size: 14px; /* Размер шрифта для описания */
+    transition: opacity 0.3s ease; /* Плавное появление/исчезновение */
+}
+
+.subtext{
+    color: rgba(250, 235, 215, 0.69);
+    font-size: large;
+    line-height: 1.5;
+}
+
+.pointer{
+    cursor: pointer;
+}

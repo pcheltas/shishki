@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruslan+Display&display=swap');
+
+.ruslan-display-regular {
+    font-family: "Ruslan Display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 30px; /* Расположение под иконкой */
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(204, 33, 33, 0.2);
+    z-index: 1000; /* Чтобы выпадающий список был выше других элементов */
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Fira Sans", sans-serif;
+    width: max-content;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    padding: 8px;
+    border-color: black;
+    border-width: 2px;
+    background: transparent;
+    cursor: pointer;
+    align-self: flex-end;
+    color: black;
+    font-size: 16px;
+}
+
+.dropdown-menu button:hover {
+    background-color: #3498db; /* Цвет при наведении */
+}
+
+.icon {
+    cursor: pointer;
+    font-size: 35px;
+    margin-right: 40px;
+}
+
+.header {
+    background: #1C3025;
+    color: #fff;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    /*width: -webkit-fill-available;*/
+    width: 97%;
+    height: 50px;
+    z-index: 1;
+    flex: 1;
+}
+
+header h1 {
+    margin: 10px 0 0 70px;
+    font-size: xxx-large;
+}
+
+header h2 {
+    margin: 0 0 0 70px;
+    font-size: x-large;
+    color: antiquewhite;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+header button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background: #c0392b;
+}

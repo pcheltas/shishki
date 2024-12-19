@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: rgba(58, 79, 66, 1);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Упорядочим элементы по вертикали */
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage {
+  flex-grow: 1; /* Позволяет контенту занимать оставшееся пространство */
+  padding: 100px;
+  /*width: 100vw;*/
+}
+
+/*.background {*/
+/*  !*background-image: url('translucent-image.png');*!*/
+/*  background-size: cover; !* Покрывает всю область фона *!*/
+/*  background-position: center; !* Центрирует изображение *!*/
+/*  background-repeat: no-repeat; !* Изображение не повторяется *!*/
+/*  !*background-color: rgba(255, 255, 255, 0.5);*!*/
+/*  height: 100vh; !* Высота 100% от высоты окна *!*/
+/*  margin: 0; !* Убираем отступы по умолчанию *!*/
+/*  color: #333;*/
+/*  position: relative;*/
+/*  background-attachment: fixed;*/
+/*  !*filter: blur(10px);*!*/
+/*}*/
+
+.overlay {
+  background-color: rgba(58, 79, 66, 1); /* Белый цвет с 50% прозрачностью */
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 100%;
+}
+
+.frame-element{
+  background-color: #1C3025;
+  border-radius: 20px;
+  margin: 30px;
+  padding: 35px;
+}

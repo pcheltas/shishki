@@ -1,0 +1,61 @@
+.row-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.description {
+    position: absolute;
+    background-color: #b79b9b;
+    color: #1c3025;
+    padding: 8px;
+    border-radius: 4px;
+    z-index: 1000; /* Обеспечьте, чтобы всплывающее окно было над другими элементами */
+    white-space: nowrap; /* Чтобы текст не переносился */
+}
+
+.square-element{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 250px;
+    justify-content: center
+}
+
+.square-element h1{
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 20px 0 20px;
+    text-align: center
+}
+
+.square-element div{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.row-element{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px 0 20px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.row-element h1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*margin: 0 20px 0 20px;*/
+    text-align: center;
+    font-size: large;
+}
+
+.row-element div{
+    display: flex;
+    align-items: center;
+}

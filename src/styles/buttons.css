@@ -1,0 +1,28 @@
+.basic-button {
+    background-color: #1C3025; /* Зеленый цвет фона */
+    color: antiquewhite; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 20px; /* Закругленные углы */
+    padding: 30px 40px; /* Внутренние отступы */
+    font-size: 25px; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход для изменения цвета при наведении */
+}
+
+.basic-button:hover {
+    background-color: rgba(28, 48, 37, 0.66); /* Цвет фона при наведении */
+}
+
+.add-button{
+    background-color: #2b4d3b; /* Зеленый цвет фона */
+    color: antiquewhite; /* Цвет текста */
+    border: none; /* Без рамки */
+    border-radius: 20px; /* Закругленные углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 15px; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s; /* Плавный переход для изменения цвета при наведении */
+}
+.add-button:hover {
+    background-color: rgba(20, 35, 27, 0.88); /* Цвет фона при наведении */
+}

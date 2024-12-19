@@ -1,0 +1,33 @@
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row div{
+    /*display: flex;*/
+    flex: 1;
+    padding: 30px;
+    align-content: center
+}
+
+.flex-row img{
+    /*padding-left: 50px;*/
+    border-radius: 30px;
+    height: 600px;
+}
+
+h1{
+    color: antiquewhite;
+    font-size: xxx-large;
+}
+li{
+    color: antiquewhite;
+    margin: 30px;
+    font-size: x-large;
+    line-height: 1.5;
+}
+
+.align-center-container{
+    display: flex;
+    justify-content: center;
+}
