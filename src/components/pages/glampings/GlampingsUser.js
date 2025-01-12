@@ -7,7 +7,7 @@ import GlampingsArray from "./components/GlampingsArray";
 
 const GlampingsUser = () => {
     const dispatch = useDispatch();
-    const glampings = useSelector(state => state.glampings.glampings)
+    const glampings = useSelector(state => state.glampings.glampingsApproved)
 
     useEffect(() => {
         const loadData = async () => {

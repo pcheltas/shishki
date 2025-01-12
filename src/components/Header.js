@@ -9,7 +9,7 @@ const Header = () => {
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     // const isAuthenticated = true
     // const login = useSelector(state => state.auth.login);
-    // const role = useSelector(state => state.auth.role);
+    const role = useSelector(state => state.auth.role);
     // const token = useSelector(state => state.auth.token)
     // const dispatch = useDispatch();
     const [isOpen, setIsOpen] = useState(false);
@@ -53,6 +53,15 @@ const Header = () => {
                 <Link to="/reviews" style={{textDecoration: 'none'}}>
                     <h2>отзывы</h2>
                 </Link>
+                {
+                    role === "ADMIN" ?
+                        <Link to="/admin" style={{textDecoration: 'none'}}>
+                            <h2>админка</h2>
+                        </Link>
+                        :
+                        <div></div>
+
+                }
             </div>
             <div className="user-dropdown" onClick={toggleDropdown}>
 

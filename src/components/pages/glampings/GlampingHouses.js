@@ -11,7 +11,7 @@ const GlampingHouses = () => {
     const dispatch = useDispatch();
     const houses = useSelector(state => state.houses.houses)
     const {id} = useParams();
-    const glamping = useSelector(state => state.glampings.glampings.find(glamping => glamping.id === id))
+    const glamping = useSelector(state => state.glampings.approvedGlampings.find(glamping => glamping.id === id))
     const [path, setPath] = useState(`?glamping=${id}&status=0`)
 
     useEffect(() => {

@@ -8,7 +8,7 @@ import ReviewCreation from "./ReviewCreation";
 
 const Reviews = () => {
     const reviews = useSelector(state => state.reviews.reviews)
-    const glampings = useSelector(state => state.glampings.glampings)
+    const glampings = useSelector(state => state.glampings.glampingsApproved)
     const token = useSelector(state => state.auth.token)
     const dispatch = useDispatch();
     const [open, setOpen] = useState(false)

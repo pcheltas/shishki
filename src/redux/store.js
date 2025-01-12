@@ -19,6 +19,7 @@ import glampingsSlice from "./glampingsSlice";
 import photoSlice from "./photoSlice";
 import housesSlice from "./housesSlice";
 import houseTypeSlice from "./houseTypeSlice";
+import adminSlice from "./adminSlice";
 
 export const API_URL = 'http://localhost:6128';
 
@@ -39,6 +40,7 @@ const rootReducer = combineReducers({
     photo: photoSlice,
     houses: housesSlice,
     houseTypes: houseTypeSlice,
+    admin: adminSlice,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

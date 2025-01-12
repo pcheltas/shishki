@@ -7,7 +7,7 @@ import {addReview} from "../../../redux/reviewsSlice";
 const ReviewCreation = ({handleChange}) => {
     const login = useSelector(state => state.auth.login)
     const token = useSelector(state => state.auth.token)
-    const glampings = useSelector(state => state.glampings.glampings)
+    const glampings = useSelector(state => state.glampings.glampingsApproved)
     const dispatch = useDispatch();
     const [error, setError] = useState([false, ""])
     const [formData, setFormData] = useState({

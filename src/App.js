@@ -20,6 +20,7 @@ import GlampingsAdmin from "./components/pages/glampings/GlampingsAdmin";
 import GlampingsOwner from "./components/pages/glampings/GlampingsOwner";
 import GlampingsStuff from "./components/pages/glampings/GlampingsStuff";
 import GlampingHouses from "./components/pages/glampings/GlampingHouses";
+import Admin from "./components/pages/admin/Admin";
 
 
 const AppContent = () => {
@@ -28,14 +29,14 @@ const AppContent = () => {
     const renderGlampingsComponent = () => {
         switch (role) {
             case "ADMIN":
-                return <GlampingsAdmin />;
+                return <GlampingsAdmin/>;
             case "OWNER":
-                return <GlampingsOwner />;
+                return <GlampingsOwner/>;
             case "STUFF":
-                return <GlampingsStuff />;
+                return <GlampingsStuff/>;
             case "USER":
             default:
-                return <GlampingsUser />;
+                return <GlampingsUser/>;
         }
     };
 
@@ -46,12 +47,18 @@ const AppContent = () => {
                 <Route path="/glampings" element={renderGlampingsComponent()}/>
                 <Route path="/faq" element={<Faq/>}/>
                 <Route path="/contacts" element={<Contacts/>}/>
-                <Route path="/additional" element={<Additional/>} />
-                <Route path="/register" element={<Register/>} />
-                <Route path="/login" element={<Login/>} />
-                <Route path="/account" element={<Account/>} />
-                <Route path="/reviews" element={<Reviews/>} />
-                <Route path='/glampings/:id' element={<GlampingHouses />} />
+                <Route path="/additional" element={<Additional/>}/>
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/account" element={<Account/>}/>
+                <Route path="/reviews" element={<Reviews/>}/>
+                <Route path='/glampings/:id' element={<GlampingHouses/>}/>
+                {
+                    role === "ADMIN" ?
+                        <Route path='/admin' element={<Admin/>}/>
+                        :
+                        <></>
+                }
             </Routes>
         </BrowserRouter>
     );

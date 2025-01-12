@@ -18,24 +18,27 @@ const Register = () => {
         },
         role: "USER"
     });
-    const [isGlampingOwner, setIsGlampingOwner] = useState(true);
+    const [isGlampingOwner, setIsGlampingOwner] = useState(false);
     // const checkboxRef = useRef(null);
     const [errors, setErrors] = useState('');
 
-    const handleCheckboxChange = (event) => {
+    const handleCheckboxChange = async (event) => {
         const checked = event.target.checked;
-        setIsGlampingOwner(checked);
+        await setIsGlampingOwner(checked);
         console.log("Checkbox changed:", checked);
+        await setFormData({
+            ...formData,
+            role: isGlampingOwner ? "OWNER" : "USER",
+        });
+        console.log(formData)
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const newErrors = validateForm();
         setErrors(newErrors);
-        setFormData({
-            ...formData,
-            role: isGlampingOwner ? "OWNER" : "USER",
-        });
+        formData.role = isGlampingOwner ? "OWNER" : "USER"
+        console.log(formData)
         if (Object.keys(newErrors).length === 0) {
             const action = await dispatch(register(JSON.stringify(formData)));
             console.log(formData)

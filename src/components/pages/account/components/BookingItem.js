@@ -114,7 +114,7 @@ const BookingItem = ({booking}) => {
             {(isCurrentDateGreater && role === "ADMIN") ?
                 <div></div>
                 : <div>
-                    <button onClick={handleCancel} className="basic-button">Отменить бронирование</button>
+                    <button onClick={handleCancel} className="add-button">Отменить бронирование</button>
                 </div>}
         </div>
     );

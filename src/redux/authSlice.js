@@ -7,6 +7,7 @@ export const register = createAsyncThunk('auth/register', async (userDto, {rejec
         'Content-Type': 'application/json; charset=utf-8',
     }
     try {
+        console.log(userDto)
         const response = await axios.post(`${API_URL}/register`, userDto, {headers});
         return response.data;
     } catch (error) {
