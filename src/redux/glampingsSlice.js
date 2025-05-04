@@ -31,6 +31,19 @@ export const addGlamping = createAsyncThunk('addGlamping', async (args, {rejectW
     }
 });
 
+export const fetchBookingsByGlamping = createAsyncThunk('fetchBookingsByGlamping', async (args, {rejectWithValue}) => {
+    const headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Authorization': 'Bearer ' + args[1]
+    }
+    try {
+        const response = await axios.get(`${API_URL}/bookings/glamping/${args[0]}`, {headers});
+        return response.data;
+    } catch (error) {
+        throw rejectWithValue(error.response?.data?.message || error.message || 'Произошла ошибка');
+    }
+});
+
 const glampingsSlice = createSlice({
     name: 'reviews',
     initialState: {

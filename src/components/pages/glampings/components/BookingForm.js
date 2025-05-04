@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import {DateCalendar} from '@mui/x-date-pickers/DateCalendar';
 import Cart from "../../additional/components/Cart";
 import Services from "../../additional/components/Services";
 import Goods from "../../additional/components/Goods";
@@ -9,11 +9,11 @@ import {addGuest} from "../../../../redux/guestsSlice";
 import {isBefore, isSameDay} from 'date-fns';
 import {fetchBookedDays} from "../../../../redux/housesSlice";
 import {LocalizationProvider} from "@mui/x-date-pickers";
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
+import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFnsV3'
 import {styled} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
-const CustomDateCalendar = styled(DateCalendar)(({ theme }) => ({
+const CustomDateCalendar = styled(DateCalendar)(({theme}) => ({
     background: 'white',
     borderRadius: "20px",
     '.Mui-selected': {
@@ -95,6 +95,7 @@ const BookingForm = ({handleChange, house}) => {
 
     const shouldDisableDateStart = (date) => {
         const today = new Date();
+        today.setHours(0, 0, 0, 0);
         if (isBefore(date, today)) {
             return true;
         }
@@ -103,6 +104,7 @@ const BookingForm = ({handleChange, house}) => {
 
     const shouldDisableDateEnd = (date) => {
         const today = new Date();
+        today.setHours(0, 0, 0, 0);
         if (isBefore(date, today)) {
             return true;
         }
@@ -221,7 +223,9 @@ const BookingForm = ({handleChange, house}) => {
                                 </div>
                                 :
                                 <div>
-                                    <button onClick={handleGoToServices}> назад</button>
+                                    <button onClick={handleGoToServices} className="basic-button"
+                                            style={{padding: "10px", fontSize: "17px"}}> назад
+                                    </button>
                                     <div className="row-container" style={{alignItems: "start"}}>
                                         <div style={{flex: 1, margin: "20px"}}>
                                             <h1 className="title-common">Гости</h1>
@@ -381,7 +385,7 @@ const BookingForm = ({handleChange, house}) => {
                                             justifyContent: "space-evenly"
                                         }}>
                                             <div>
-                                            <h1 className="title-common">Услуги</h1>
+                                                <h1 className="title-common">Услуги</h1>
                                                 {formData.services.map((service) => (
                                                     <p className="text-small" key={service.id}>{service.name}</p>
                                                 ))}
@@ -418,7 +422,7 @@ const BookingForm = ({handleChange, house}) => {
 
                                         </div>
                                     </div>
-                                    <button type="button" onClick={handleSubmit}>Забронировать</button>
+                                    <button type="button" className="basic-button" style={{padding: "10px", fontSize: "17px"}} onClick={handleSubmit}>Забронировать</button>
                                 </div>
                             }
                         </form>

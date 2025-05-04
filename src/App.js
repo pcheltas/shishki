@@ -18,7 +18,7 @@ import Reviews from "./components/pages/reviews/Reviews";
 import 'react-toastify/dist/ReactToastify.css';
 import GlampingsAdmin from "./components/pages/glampings/GlampingsAdmin";
 import GlampingsOwner from "./components/pages/glampings/GlampingsOwner";
-import GlampingsStuff from "./components/pages/glampings/GlampingsStuff";
+import GlampingsStaff from "./components/pages/glampings/GlampingsStaff";
 import GlampingHouses from "./components/pages/glampings/GlampingHouses";
 import Admin from "./components/pages/admin/Admin";
 
@@ -32,9 +32,10 @@ const AppContent = () => {
                 return <GlampingsAdmin/>;
             case "OWNER":
                 return <GlampingsOwner/>;
-            case "STUFF":
-                return <GlampingsStuff/>;
+            case "STAFF":
+                return <GlampingsStaff/>;
             case "USER":
+                return <GlampingsUser/>;
             default:
                 return <GlampingsUser/>;
         }

@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {addPhoto} from "../../../../../redux/photoSlice";
-import {addGlamping, fetchGlampings} from "../../../../../redux/glampingsSlice";
-import {addGuest} from "../../../../../redux/guestsSlice";
+import {addGlamping, fetchAllGlampings} from "../../../../../redux/glampingsSlice";
 
 const GlampingForm = ({handleChange}) => {
     const dispatch = useDispatch();
@@ -68,13 +67,10 @@ const GlampingForm = ({handleChange}) => {
         setErrors(validationErrors);
         if (Object.keys(validationErrors).length === 0) {
             const response = await dispatch(addPhoto([image, token]))
-            // console.log(response.payload.fileName)
             // const imageName = response.payload.fileName
             formData.photoName = response.payload.fileName
-            // console.log(imageName)
-            // console.log('Форма отправлена:', {...formData, image});
             dispatch(addGlamping([JSON.stringify(formData), token]))
-            dispatch(fetchGlampings)
+            dispatch(fetchAllGlampings())
             handleChange()
         }
     };
@@ -124,13 +120,6 @@ const GlampingForm = ({handleChange}) => {
                             <div style={{display: "flex", alignItems: "start"}}>
                                 <label htmlFor="address" className="title-common" style={{textAlign: "start"}}>Адрес:</label>
                             </div>
-                            {/*<input*/}
-                            {/*    type="text"*/}
-                            {/*    id="address"*/}
-                            {/*    name="address"*/}
-                            {/*    value={formData.address}*/}
-                            {/*    onChange={handleInputChange}*/}
-                            {/*/>*/}
                             <textarea
                                 id="address"
                                 name="address"
@@ -142,7 +131,7 @@ const GlampingForm = ({handleChange}) => {
                                     resize: 'vertical',
                                     borderRadius: "20px",
                                     padding: "20px"
-                                }} // разрешение на вертикальное изменение размера
+                                }}
                             />
                             {errors.address && <span style={{color: 'red'}}>{errors.address}</span>}
                         </div>
@@ -154,13 +143,13 @@ const GlampingForm = ({handleChange}) => {
                             name="description"
                             value={formData.description}
                             onChange={handleInputChange}
-                            rows="10" // количество строк
+                            rows="10"
                             style={{
                                 width: '95%',
                                 resize: 'vertical',
                                 borderRadius: "20px",
                                 padding: "20px"
-                            }} // разрешение на вертикальное изменение размера
+                            }}
                         />
                         {errors.description && <span style={{color: 'red'}}>{errors.description}</span>}
                     </div>

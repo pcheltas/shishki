@@ -3,6 +3,7 @@ import axios from "axios";
 import {API_URL} from "./store";
 
 export const fetchHouses = createAsyncThunk('fetchHouses', async (path) => {
+    console.log("fetchHouses")
     const response = await axios.get(`${API_URL}/houses${path}`);
     if (response.status !== 200) {
         throw new Error('Failed to fetch houses');
@@ -24,6 +25,19 @@ export const fetchBookedDays = createAsyncThunk('fetchBookedDays', async (id) =>
         throw new Error('Failed to fetch booked days for this house');
     }
     return response.data;
+});
+
+export const fetchHouseCode = createAsyncThunk('fetchHouseCode', async (args, {rejectWithValue}) => {
+    const headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Authorization': 'Bearer ' + args[1]
+    }
+    try {
+        const response = await axios.get(`${API_URL}/houses/${args[0]}/code`, {headers});
+        return response.data;
+    } catch (error) {
+        throw rejectWithValue(error.response?.data?.message || error.message || 'Произошла ошибка');
+    }
 });
 
 export const addHouse = createAsyncThunk('addHouse', async (args, {rejectWithValue}) => {

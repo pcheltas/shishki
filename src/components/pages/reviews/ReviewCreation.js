@@ -47,7 +47,6 @@ const ReviewCreation = ({handleChange}) => {
         handleChange();
         if (validateForm()){
             dispatch(addReview([JSON.stringify(formData), token]))
-            console.log('Форма отправлена:', formData);
         }
     };
 
@@ -78,7 +77,7 @@ const ReviewCreation = ({handleChange}) => {
                                 <option value="">Выберите глэмпинг</option>
                                 {glampings.length > 0 ? (
                                     glampings.map(glamping => (
-                                        <option value={glamping.id}>{glamping.description}</option>
+                                        <option value={glamping.id}>{glamping.address}</option>
                                     ))
                                 ) : (
                                     <></>

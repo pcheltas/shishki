@@ -54,6 +54,7 @@ const BookingHouseItem = ({house, path}) => {
                     <p className="text-small">Тип: {house.houseType}</p>
                     <p className="text-small">Количество
                         гостей: {houseTypes?.find(type => type.type === house.houseType)?.numberOfPersons}</p>
+                    <p className="text-small">Стоимость за ночь: {house.cost} р.</p>
                 </div>
                 <div style={{display: "flex", justifyContent: "center"}}>
                     <button className="add-button" style={{width: "200px", fontSize: "20px"}} onClick={handleChange}>

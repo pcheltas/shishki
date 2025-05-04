@@ -2,9 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import MyGlampingItem from "./MyGlampingItem";
 import GlampingForm from "./GlampingForm";
-import {fetchHouses} from "../../../../../redux/housesSlice";
-import {fetchHouseTypes} from "../../../../../redux/houseTypeSlice";
-import {fetchAllGlampings, fetchGlampings} from "../../../../../redux/glampingsSlice";
+import {fetchAllGlampings} from "../../../../../redux/glampingsSlice";
 
 const MyGlampings = () => {
     const dispatch = useDispatch();
@@ -15,6 +13,7 @@ const MyGlampings = () => {
 
     const handleChange = () => {
         setFilling(!filling)
+        dispatch(fetchAllGlampings())
     }
 
     useEffect(() => {
