@@ -21,7 +21,7 @@ import housesSlice from "./housesSlice";
 import houseTypeSlice from "./houseTypeSlice";
 import adminSlice from "./adminSlice";
 
-export const API_URL = 'http://localhost:6128';
+export const API_URL = 'http://localhost:6128/api/v1';
 
 const persistConfig = {
     key: 'root',
