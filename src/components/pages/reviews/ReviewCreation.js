@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import "../../../styles/reviews.css"
 import {useDispatch, useSelector} from "react-redux";
 import ReactStars from "react-rating-stars-component";
-import {addReview} from "../../../redux/reviewsSlice";
+import {addReview, fetchReviews} from "../../../redux/reviewsSlice";
 
 const ReviewCreation = ({handleChange}) => {
     const login = useSelector(state => state.auth.login)
@@ -42,11 +42,12 @@ const ReviewCreation = ({handleChange}) => {
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         handleChange();
-        if (validateForm()){
-            dispatch(addReview([JSON.stringify(formData), token]))
+        if (validateForm()) {
+            await dispatch(addReview([JSON.stringify(formData), token]))
+            await dispatch(fetchReviews())
         }
     };
 

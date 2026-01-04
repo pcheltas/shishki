@@ -67,10 +67,9 @@ const GlampingForm = ({handleChange}) => {
         setErrors(validationErrors);
         if (Object.keys(validationErrors).length === 0) {
             const response = await dispatch(addPhoto([image, token]))
-            // const imageName = response.payload.fileName
             formData.photoName = response.payload.fileName
-            dispatch(addGlamping([JSON.stringify(formData), token]))
-            dispatch(fetchAllGlampings())
+            await dispatch(addGlamping([JSON.stringify(formData), token]))
+            await dispatch(fetchAllGlampings())
             handleChange()
         }
     };
