@@ -23,7 +23,7 @@ export const addStuff = createAsyncThunk('makeStuff', async (args, {rejectWithVa
 
     }
     try {
-        const response = await axios.put(`${API_URL}/admin/${args[0]}:staff`, {}, {headers});
+        const response = await axios.put(`${API_URL}/admin/users/${args[0]}/staff`, {}, {headers});
         return response.data;
     } catch (error) {
         throw rejectWithValue(error.response?.data?.message || error.message || 'Произошла ошибка');
@@ -37,7 +37,7 @@ export const addAdmin = createAsyncThunk('makeAdmin', async (args, {rejectWithVa
 
     }
     try {
-        const response = await axios.put(`${API_URL}/admin/${args[0]}:admin`, {}, {headers});
+        const response = await axios.put(`${API_URL}/admin/users/${args[0]}/admin`, {}, {headers});
         return response.data;
     } catch (error) {
         throw rejectWithValue(error.response?.data?.message || error.message || 'Произошла ошибка');
@@ -65,7 +65,7 @@ export const approveGlamping = createAsyncThunk('approveGlamping', async (args, 
 
     }
     try {
-        const response = await axios.put(`${API_URL}/admin/glampings/${args[0]}:approve`, {}, {headers});
+        const response = await axios.put(`${API_URL}/admin/glampings/${args[0]}/true`, {}, {headers});
         return response.data;
     } catch (error) {
         throw rejectWithValue(error.response?.data?.message || error.message || 'Произошла ошибка');
@@ -79,7 +79,7 @@ export const rejectGlamping = createAsyncThunk('approveGlamping', async (args, {
 
     }
     try {
-        const response = await axios.put(`${API_URL}/admin/glampings/${args[0]}:reject`, {}, {headers});
+        const response = await axios.put(`${API_URL}/admin/glampings/${args[0]}/false`, {}, {headers});
         return response.data;
     } catch (error) {
         throw rejectWithValue(error.response?.data?.message || error.message || 'Произошла ошибка');
